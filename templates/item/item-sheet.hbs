@@ -1,0 +1,105 @@
+
+<section class="sac-item sac-card">
+  <header class="sac-item-header">
+    <img class="profile" src="{{item.img}}" data-edit="img" title="{{item.name}}">
+    <h1><input name="name" type="text" value="{{item.name}}"></h1>
+    <div class="meta">
+      <label>Quantidade</label>
+      <input type="number" name="system.qtd" value="{{item.system.qtd}}">
+      <label>Preço</label>
+      <input type="text" name="system.preco" value="{{item.system.preco}}" placeholder="R$... - R$...">
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="desc">Descrição</a>
+    <a class="item" data-tab="det">Detalhes</a>
+    <a class="item" data-tab="act">Atividades</a>
+    <a class="item" data-tab="fx">Efeitos</a>
+  </nav>
+
+  <section class="sheet-body" data-group="primary">
+    <div class="tab" data-tab="desc">
+      <div class="form-group stacked">
+        <label>Descrição</label>
+        <textarea name="system.descricao" rows="8">{{item.system.descricao}}</textarea>
+      </div>
+    </div>
+
+    <div class="tab" data-tab="det">
+      {{#if (eq item.type "arma")}}
+      <h3 class="hr">Detalhes da Arma</h3>
+      <div class="grid-2">
+        <div class="form-group">
+          <label>Categoria</label>
+          <input type="text" name="system.categoria" value="{{item.system.categoria}}" placeholder="ex: 'revólver', 'espada'">
+        </div>
+        <div class="form-group">
+          <label>Espaço</label>
+          <input type="text" name="system.espaco" value="{{item.system.espaco}}" placeholder="ex: 1 linha, 2 linhas, coldre/bainha">
+        </div>
+
+        <div class="form-group">
+          <label>Balas / Capacidade</label>
+          <input type="number" name="system.capacidade" value="{{item.system.capacidade}}">
+        </div>
+        <div class="form-group">
+          <label>Recarga (Ações)</label>
+          <input type="number" name="system.recargaAcoes" value="{{item.system.recargaAcoes}}">
+        </div>
+
+        <div class="form-group">
+          <label>Munição atual</label>
+          <input type="number" name="system.municao" value="{{item.system.municao}}">
+        </div>
+        <div class="form-group">
+          <label>Alcance</label>
+          <input type="text" name="system.alcance" value="{{item.system.alcance}}" placeholder="ex: curto/médio/longo ou metros">
+        </div>
+
+        <div class="form-group">
+          <label>Dano (Círculos)</label>
+          <input type="number" name="system.dano.circulos" value="{{item.system.dano.circulos}}">
+        </div>
+        <div class="form-group">
+          <label>Tipo de Dano</label>
+          <input type="text" name="system.dano.tipo" value="{{item.system.dano.tipo}}" placeholder="ex: perfurante, concussão, +veneno">
+        </div>
+      </div>
+
+      <h3 class="hr">Munição (para contagem por tipo)</h3>
+      <div class="grid-2">
+        <div class="form-group">
+          <label>Tipo de Munição</label>
+          <input type="text" name="system.municaoTipo" value="{{item.system.municaoTipo}}" placeholder="ex: .44, espingarda, fuzil">
+        </div>
+        <div class="form-group">
+          <label>Balas por Caixa</label>
+          <input type="number" name="system.municaoCaixa" value="{{item.system.municaoCaixa}}" placeholder="ex: 12, 6, 8">
+        </div>
+      </div>
+
+      {{else}}
+      <h3 class="hr">Detalhes do Item</h3>
+      <div class="grid-2">
+        <div class="form-group">
+          <label>Categoria</label>
+          <input type="text" name="system.categoria" value="{{item.system.categoria}}" placeholder="ex: vestuário, acessório, remédio">
+        </div>
+        <div class="form-group">
+          <label>Espaço</label>
+          <input type="text" name="system.espaco" value="{{item.system.espaco}}" placeholder="ex: 1 linha, 2 linhas, —">
+        </div>
+      </div>
+      {{/if}}
+    </div>
+
+    <div class="tab" data-tab="act">
+      <p class="muted">Sem atividades pré-configuradas. Você pode usar macros ou efeitos para automatizar.</p>
+    </div>
+
+    <div class="tab" data-tab="fx">
+      <p class="muted">Integração com efeitos ainda não implementada.</p>
+    </div>
+  </section>
+</section>

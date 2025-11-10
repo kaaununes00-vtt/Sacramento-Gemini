@@ -1,0 +1,18 @@
+{
+  "SAC.title": "Sacramento RPG",
+  "SAC.attributes": "Atributos",
+  "SAC.backgrounds": "Antecedentes",
+  "SAC.combat": "Combate",
+  "SAC.life": "Círculos de Vida",
+  "SAC.pain": "Círculos de Dor",
+  "SAC.defense": "Defesa",
+  "SAC.moves": "Movimentos",
+  "SAC.actions": "Ações de Combate",
+  "SAC.roll": "Rolar",
+  "SAC.forceRoll": "Forçar Rolagem",
+  "SAC.attack": "Ataque",
+  "SAC.violence": "Violência",
+  "SAC.resistance": "Resistência",
+  "SAC.backgroundTest": "Teste de Antecedente",
+  "SAC.painPenaltyTable": "Penalidades de Dor"
+}

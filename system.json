@@ -1,0 +1,27 @@
+{
+  "id": "sacramento-rpg",
+  "title": "Sacramento RPG",
+  "description": "Sistema Sacramento RPG v13: ficha personalizada, rolagens 1d6, caveiras/punhos clicáveis, painel de ações, itens básicos.",
+  "version": "0.2.2-theme",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "esmodules": [
+    "scripts/sacramento.js",
+    "scripts/sheets.js",
+    "scripts/item-sheet.js"
+  ],
+  "styles": [
+    "styles/sacramento.css"
+  ],
+  "packs": [
+    {
+      "label": "Itens - Sacramento",
+      "name": "items",
+      "path": "packs/items.db",
+      "type": "Item"
+    }
+  ]
+}

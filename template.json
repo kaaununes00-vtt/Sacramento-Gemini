@@ -1,0 +1,77 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "atributos": {
+          "fisico": 0,
+          "velocidade": 0,
+          "intelecto": 0,
+          "coragem": 0
+        },
+        "antecedentes": {
+          "atencao": 0,
+          "medicina": 0,
+          "montaria": 0,
+          "suor": 0,
+          "negocios": 0,
+          "roubo": 0,
+          "tradicao": 0,
+          "violencia": 0
+        },
+        "recursos": {
+          "vida": {
+            "value": 6,
+            "max": 6
+          },
+          "dor": {
+            "value": 0,
+            "max": 6
+          }
+        },
+        "combate": {
+          "movimentos": 1,
+          "acoes": 1,
+          "iniciativa": 0,
+          "defesa": 5
+        },
+        "cavalo": {
+          "vida": {
+            "value": 6,
+            "max": 6
+          },
+          "dor": {
+            "value": 0,
+            "max": 6
+          },
+          "fidelidade": 0
+        },
+        "notas": ""
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "arma",
+      "outro"
+    ],
+    "arma": {
+      "categoria": "revólver",
+      "capacidade": 6,
+      "municao": 6,
+      "recargaAcoes": 2,
+      "alcance": "perto",
+      "dano": {
+        "tipo": "vida",
+        "circulos": 2
+      },
+      "descricao": ""
+    },
+    "outro": {
+      "descricao": ""
+    }
+  }
+}

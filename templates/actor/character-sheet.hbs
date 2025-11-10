@@ -1,0 +1,258 @@
+<form class="sheet" autocomplete="off">
+<section class="sac-sheet sac-paper sac-layout">
+  <header class="sac-topbar sac-headerbar sac-header-dark">
+  <img class="sac-portrait large" src="{{actor.img}}" title="{{actor.name}}"/>
+  <div class="header-right">
+    <div class="name-line only-input">
+      <input class="name rye-light" name="name" type="text" value="{{actor.name}}"/>
+    </div>
+    <div class="bars-line">
+      <div class="hp-wrap">
+        <div class="hp-bar slim">
+          <div class="hp-fill" style="width: {{percent actor.system.recursos.vida.value actor.system.recursos.vida.max}}%;"></div>
+          <div class="hp-text">{{actor.system.recursos.vida.value}} / {{actor.system.recursos.vida.max}}</div>
+        </div>
+      </div>
+      <div class="pain-wrap">
+        <div class="pain-bar slim">
+          <div class="pain-fill" style="width: {{percent actor.system.recursos.dor.value actor.system.recursos.dor.max}}%;"></div>
+          <div class="pain-text">{{actor.system.recursos.dor.value}} / {{actor.system.recursos.dor.max}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="personagem">Personagem</a>
+    <a class="item" data-tab="equipamentos">Equipamentos</a>
+    <a class="item" data-tab="cavalo">Cavalo</a>
+    <a class="item" data-tab="notas">Notas</a>
+    <a class="item" data-tab="acoes">Ações</a>
+  </nav>
+  <section class="sheet-body">
+    <div class="tab personagem active" data-group="primary" data-tab="personagem">
+      <div class="cols">
+        <div class="col left">
+          <section class="panel panel-attr">
+  <h2 class="panel-title">Atributos</h2>
+  <p class="panel-sub">Condições Iniciais: 6 Círculos de Vida, 6 Círculos de Dor, 1 Ação de Combate, 1 Movimento, 4 Pontos de Antecedente, 4 Pontos de Atributo, Defesa 5.</p>
+  <div class="attr-list">
+    {{#each actor.system.atributos as |val key|}}
+      <div class="attr">
+        <label class="attr-roll" data-attr="{{key}}">{{key}}</label>
+        <input type="number" name="system.atributos.{{key}}" value="{{val}}" data-dtype="Number"/>
+        {{#if (eq key "fisico")}}<small>+1 💀 por ponto</small>{{/if}}
+        {{#if (eq key "velocidade")}}<small>+1 Movimento por ponto</small>{{/if}}
+        {{#if (eq key "intelecto")}}<small>+1 Antecedente por ponto</small>{{/if}}
+        {{#if (eq key "coragem")}}<small>+1 Ação de Combate por ponto</small>{{/if}}
+      </div>
+    {{/each}}
+  </div>
+</section>
+          <section class="panel panel-mini">
+            <div class="mini"><h3>Movimentos</h3><input type="number" name="system.combate.movimentos" value="{{actor.system.combate.movimentos}}"/></div>
+            <div class="mini"><h3>Ações de combate</h3><input type="number" name="system.combate.acoes" value="{{actor.system.combate.acoes}}"/></div>
+            <div class="mini"><h3>Iniciativa</h3><input type="number" name="system.combate.iniciativa" value="{{actor.system.combate.iniciativa}}"/></div>
+            <div class="mini"><h3>Defesa</h3><input type="number" name="system.combate.defesa" value="{{actor.system.combate.defesa}}"/></div>
+          </section>
+        </div>
+        <div class="col right">
+          <section class="panel panel-skills">
+  <h2 class="panel-title">Antecedentes</h2>
+  <p class="panel-sub">Distribua 4 pontos (+1 por Intelecto).</p>
+  <div class="skills">
+    <div class="skill">
+      <label class="skill-roll" data-skill="atencao">ATENCAO</label>
+      <input type="number" name="system.antecedentes.atencao" value="{{actor.system.antecedentes.atencao}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="atencao" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="roubo">ROUBO</label>
+      <input type="number" name="system.antecedentes.roubo" value="{{actor.system.antecedentes.roubo}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="roubo" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="medicina">MEDICINA</label>
+      <input type="number" name="system.antecedentes.medicina" value="{{actor.system.antecedentes.medicina}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="medicina" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="suor">SUOR</label>
+      <input type="number" name="system.antecedentes.suor" value="{{actor.system.antecedentes.suor}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="suor" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="montaria">MONTARIA</label>
+      <input type="number" name="system.antecedentes.montaria" value="{{actor.system.antecedentes.montaria}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="montaria" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="tradicao">TRADICAO</label>
+      <input type="number" name="system.antecedentes.tradicao" value="{{actor.system.antecedentes.tradicao}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="tradicao" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="negocios">NEGOCIOS</label>
+      <input type="number" name="system.antecedentes.negocios" value="{{actor.system.antecedentes.negocios}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="negocios" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+    <div class="skill">
+      <label class="skill-roll" data-skill="violencia">VIOLENCIA</label>
+      <input type="number" name="system.antecedentes.violencia" value="{{actor.system.antecedentes.violencia}}" data-dtype="Number"/>
+      <button type="button" class="btn-roll-antecedente" data-skill="violencia" title="Rolar 1d6 + valor">1d6+</button>
+    </div>
+  </div>
+</section>
+          <section class="panel panel-painlife">
+  <div class="block">
+    <h3>Círculos de dor</h3>
+    <div class="skulls-row">
+      <div class="skulls" data-type="dor" data-max="{{actor.system.recursos.dor.max}}">
+        {{#each (range 1 actor.system.recursos.dor.max)}}
+          <button type="button" class="skull {{#if (gte ../actor.system.recursos.dor.value this)}}filled{{/if}}" data-index="{{this}}">
+            <img src="systems/sacramento-rpg/assets/icons/fist-alt.svg">
+          </label>
+        {{/each}}
+      </div>
+      <div class="skulls-controls"><button type="button" class="skulls-sub" data-stat="dor" title="Remover círculo">−</label><button type="button" class="skulls-add" data-stat="dor" title="Adicionar círculo">+</label></div>
+    </div>
+  </div>
+  <div class="block">
+    <h3>Círculos de vida</h3>
+    <div class="skulls-row">
+      <div class="skulls" data-type="vida" data-max="{{actor.system.recursos.vida.max}}">
+        {{#each (range 1 actor.system.recursos.vida.max)}}
+          <button type="button" class="skull {{#if (gte ../actor.system.recursos.vida.value this)}}filled{{/if}}" data-index="{{this}}">
+            <img src="systems/sacramento-rpg/assets/icons/skull-alt.svg">
+          </label>
+        {{/each}}
+      </div>
+      <div class="skulls-controls"><button type="button" class="skulls-sub" data-stat="vida" title="Remover círculo">−</label><button type="button" class="skulls-add" data-stat="vida" title="Adicionar círculo">+</label></div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+    </div>
+    <div class="tab equipamentos" data-group="primary" data-tab="equipamentos">
+  <section class="panel panel-items">
+    <h3 class="panel-title">Carga Total (Coldre + Mochila): {{inventory.combinedCount}} / {{inventory.capacity}}</h3>
+    {{#if (gt inventory.combinedCount inventory.capacity)}}
+      <div class="warning">⚠️ Acima do limite de 10 (munição conta 1 por tipo).</div>
+    {{/if}}
+  </section>
+
+  <section class="panel panel-items">
+    <h3 class="panel-title">Coldre (Armas) — {{inventory.weapons.length}}</h3>
+    <div class="items-list">
+      {{#if inventory.weapons.length}}
+        {{#each inventory.weapons}}
+          <div class="item-row" data-item-id="{{this.id}}">
+            <div class="i-name">🔫 {{this.name}}</div>
+            <div class="i-props">[{{this.system.categoria}}] Munição: {{this.system.municao}} / {{this.system.capacidade}}</div>
+            <div class="i-actions">
+              <button type="button" class="item-open">Abrir</button>
+              <button type="button" class="item-attack">Atacar</button>
+              <button type="button" class="item-reload">Recarregar</button>
+            </div>
+          </div>
+        {{/each}}
+      {{else}}
+        <div class="i-empty">Sem armas no coldre.</div>
+      {{/if}}
+    </div>
+  </section>
+
+  <section class="panel panel-items">
+    <h3 class="panel-title">Mochila (Itens) — {{inventory.packCountDisplay}} / {{inventory.capacity}}</h3>
+    <div class="items-list mochila {{#if (gt inventory.combinedCount inventory.capacity)}}over{{/if}}">
+
+      {{#if inventory.ammoGroups.length}}
+        <div class="i-group"><strong>Munição</strong> (conta 1 por tipo)</div>
+        {{#each inventory.ammoGroups as |grp|}}
+          <div class="item-row ammo-group">
+            <div class="i-name">💥 Tipo: {{grp.type}}</div>
+            <div class="i-props">{{grp.items.length}} pacotes</div>
+            <div class="i-actions">
+              <button type="button" class="item-open" data-item-id="{{grp.items.0.id}}">Abrir</button>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
+
+      {{#if inventory.packDisplay.length}}
+        <div class="i-group"><strong>Outros Itens</strong></div>
+        {{#each inventory.packDisplay}}
+          <div class="item-row" data-item-id="{{this.id}}">
+            <div class="i-name">🎒 {{this.name}}</div>
+            <div class="i-props">{{this.system.descricao}}</div>
+            <div class="i-actions"><button type="button" class="item-open">Abrir</button></div>
+          </div>
+        {{/each}}
+      {{/if}}
+
+      {{#unless inventory.ammoGroups.length}}
+        {{#unless inventory.packDisplay.length}}
+          <div class="i-empty">Mochila vazia.</div>
+        {{/unless}}
+      {{/unless}}
+
+    </div>
+  </section>
+</div>
+<div class="tab cavalo" data-group="primary" data-tab="cavalo"><div class="tab cavalo" data-group="primary" data-tab="cavalo"<div class="tab cavalo" data-group="primary" data-tab="cavalo">
+      <section class="panel panel-horse">
+        <h3 class="panel-title">Cavalo</h3>
+        <div class="horse-grid">
+          <div class="block"><label>Fidelidade</label><input type="number" name="system.cavalo.fidelidade" value="{{actor.system.cavalo.fidelidade}}"/></div>
+          <div class="block">
+            <label>Vida</label>
+            <div class="skulls" data-type="cavalo-vida" data-max="{{actor.system.cavalo.vida.max}}">
+              {{#each (range 1 actor.system.cavalo.vida.max)}}
+                <button type="button" class="skull {{#if (gte ../actor.system.cavalo.vida.value this)}}filled{{/if}}" data-index="{{this}}"><img src="systems/sacramento-rpg/assets/icons/skull.svg"></label>
+              {{/each}}
+            </div>
+          </div>
+          <div class="block">
+            <label>Dor</label>
+            <div class="skulls" data-type="cavalo-dor" data-max="{{actor.system.cavalo.dor.max}}">
+              {{#each (range 1 actor.system.cavalo.dor.max)}}
+                <button type="button" class="skull {{#if (gte ../actor.system.cavalo.dor.value this)}}filled{{/if}}" data-index="{{this}}"><img src="systems/sacramento-rpg/assets/icons/fist.svg"></label>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tab notas" data-group="primary" data-tab="notas">
+      <section class="panel panel-notes"><h3 class="panel-title">Notas</h3><textarea name="system.notas" style="width:100%;min-height:260px;">{{actor.system.notas}}</textarea></section>
+    </div>
+    <div class="tab acoes" data-group="primary" data-tab="acoes">
+      <div class="panel panel-combat">
+        <h3>Painel de Combate</h3>
+        <div class="turn-counters">
+          <div class="counter"><span>Movimentos no turno:</span><button type="button" class="counter-decr" data-counter="mov">-</label><span class="counter-value" data-counter="mov">0</span><button type="button" class="counter-incr" data-counter="mov">+</label></div>
+          <div class="counter"><span>Ações no turno:</span><button type="button" class="counter-decr" data-counter="acao">-</label><span class="counter-value" data-counter="acao">0</span><button type="button" class="counter-incr" data-counter="acao">+</label></div>
+          <div class="counter"><button type="button" class="btn-start-turn">Iniciar Turno</label><button type="button" class="btn-end-turn">Encerrar Turno</label></div>
+        </div>
+        <div class="actions">
+          <button type="button" class="sac-action attack" data-cost-actions="1">Atacar (1 Ação)</label>
+          <button type="button" class="sac-action aim" data-cost-actions="1">Mirar (1 Ação)</label>
+          <button type="button" class="sac-action reload" data-cost-actions="2">Recarregar (2 Ações)</label>
+          <button type="button" class="sac-action move" data-cost-mov="1">Mover (1 Movimento)</label>
+          <button type="button" class="sac-action dynamite" data-cost-actions="1" data-cost-mov="1">Dinamite (1 Ação + 1 Mov)</label>
+        </div>
+        <div class="rolls">
+          <button type="button" class="sac-roll" data-type="antecedente" data-key="violencia">Ataque: 1d6 + Violência</label>
+          <button type="button" class="sac-roll" data-type="resistencia">Teste de Resistência (NA 6)</label>
+          <button type="button" class="sac-roll-force">Forçar Rolagem</label>
+          <button type="button" class="sac-roll-card">Puxar Carta (Iniciativa/Sorte)</label>
+        </div>
+      </div>
+    </div>
+  <footer class="sac-footer">
+  <img class="footer-logo" src="systems/sacramento-rpg/assets/logo/sacramento-logo.svg" alt="Sacramento"/>
+</footer>
+</section>
+</section>
+</form>

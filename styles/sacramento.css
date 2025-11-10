@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+.sac-paper{background:#efe9db url("systems/sacramento-rpg/assets/bg/paper.svg");background-size:cover}
+.sac-layout{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0b0b0b}
+.sheet-tabs{margin:4px 0 8px;border-bottom:2px dashed #111}
+.sheet-tabs .item{background:#efe7d1;border:2px solid #111;border-bottom:none;padding:4px 8px;margin-right:6px;font-family:'Rye';text-transform:uppercase}
+.sheet-tabs .item.active{background:#fff4da}
+.sac-topbar{display:flex;align-items:flex-end;gap:16px}
+.sac-logo{height:42px}
+.name-block label{font-family:'Rye';text-transform:uppercase}
+.name-block .name{width:360px;border:0;border-bottom:2px solid #111;background:transparent;font-size:1.1rem}
+.cols{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
+.panel{border:2px solid #111;background:rgba(255,255,255,.75);padding:10px}
+.panel-title{font-family:'Rye';text-transform:uppercase;letter-spacing:1px;margin:0 0 6px}
+.panel-sub{margin:0 0 8px;font-size:.85rem;opacity:.8}
+.panel-attr{background:#111;color:#f6f6f6}
+.panel-attr .panel-title,.panel-attr .panel-sub{color:#f6f6f6}
+.panel-attr .attr-list{display:grid;gap:8px}
+.panel-attr .attr{display:grid;grid-template-columns:1fr 70px;gap:10px;align-items:center}
+.panel-attr .attr label{font-weight:bold;text-transform:lowercase}
+.panel-attr .attr input{text-align:center;font-weight:bold;background:#f6f6f6;color:#111;border:0;padding:2px 4px;border-radius:3px}
+.panel-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.panel-mini .mini{border:2px solid #111;padding:8px;background:#fff}
+.panel-mini .mini h3{font-family:'Rye';text-transform:uppercase;margin:0 0 6px}
+.panel-mini .mini input{width:100%;text-align:center;font-weight:bold}
+.panel-skills .skills{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel-skills .skill{display:grid;grid-template-columns:1fr 80px 40px;align-items:center;gap:8px}
+.panel-skills .skill label{font-family:'Rye';text-transform:uppercase;font-size:1.35rem;text-shadow:1px 1px 0 #00000033;cursor:pointer}
+.panel-skills .skill input{text-align:center;font-weight:bold}
+.panel-painlife{display:grid;gap:10px}
+.panel-painlife .block{border:2px solid #111;padding:8px;background:#fff}
+.panel-painlife h3{font-family:'Rye';text-transform:uppercase;margin:0 0 6px}
+.skull{width:24px;height:24px;opacity:.25;border:none;background:transparent;padding:0}
+.skull.filled{opacity:1}
+.panel-combat{margin-top:8px;padding:10px;border:1px dashed #6b4a2f;background:rgba(239,228,204,.8)}
+.panel-combat h3{margin:0 0 8px;font-family:'Rye';text-transform:uppercase}
+.panel-combat .turn-counters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.panel-combat .counter{display:flex;align-items:center;gap:6px}
+.panel-combat .counter-value{min-width:20px;text-align:center;font-weight:bold}
+.panel-combat .actions,.panel-combat .rolls{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.panel-combat button{border:1px solid #6b4a2f;padding:6px 10px;background:#f7efe0;cursor:pointer}
+.panel-items .items-list{display:flex;flex-direction:column;gap:6px}
+.panel-items .item-row{display:grid;grid-template-columns:1.2fr 1fr auto;gap:8px;align-items:center;border:2px solid #111;padding:6px;background:#fff}
+.panel-items .i-name{font-weight:bold}
+.panel-items .i-actions button{border:1px solid #111;padding:4px 8px;margin-left:6px}
+.panel-horse .horse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.panel-horse label{font-family:'Rye';text-transform:uppercase;text-shadow:1px 1px 0 #00000033;letter-spacing:1px;display:block;margin-bottom:6px}
+
+
+/* ===== Header portrait + HP bar ===== */
+.sac-headerbar{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sac-portrait{width:54px;height:54px;object-fit:cover;border:2px solid #111;border-radius:6px;background:#4a2951}
+.sac-headerbar .header-right{display:flex;flex-direction:column;gap:6px;flex:1}
+.sac-headerbar .name-line{display:flex;align-items:flex-end;gap:10px}
+.sac-headerbar .name-line label{font-family:'Rye';text-transform:uppercase}
+.sac-headerbar .name-line .name{flex:0 0 280px;border:0;border-bottom:2px solid #111;background:transparent;font-size:1.1rem}
+.sac-headerbar .game-logo .sac-logo{height:28px;vertical-align:middle;margin-right:8px}
+.hp-line{display:flex;align-items:center;gap:8px}
+.hp-label{font-family:'Rye';text-transform:uppercase;color:#fff;background:#111;padding:2px 6px;border-radius:4px;border:1px solid #000}
+.hp-bar{position:relative;flex:1;height:16px;background:#2a0000;border:1px solid #000;border-radius:3px;box-shadow: inset 0 0 0 1px #4a0a0a}
+.hp-fill{position:absolute;left:0;top:0;bottom:0;background:#b31414}
+.hp-text{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-weight:bold;color:#fff;text-shadow:1px 1px 0 #000}
+
+
+/* ===== Header visual tweaks ===== */
+.sac-header-dark{background:#111; border:2px solid #111; padding:8px}
+.sac-portrait.large{width:68px;height:68px;border-radius:8px;background:#000;border:2px solid #222;object-fit:cover}
+.rye-light{font-family:'Rye'; color:#f5f5f5}
+.sac-headerbar .name-line.only-input{display:flex; align-items:center}
+.sac-headerbar .name-line.only-input .name{flex:1; border:0; border-bottom:2px solid #444; background:transparent; font-size:1.25rem; padding:2px 0; text-shadow:1px 1px 0 #000}
+
+/* Bars row: HP + Pain side-by-side */
+.bars-line{display:grid; grid-template-columns: 1fr 1fr; gap:10px; align-items:center}
+.hp-bar.slim, .pain-bar.slim{position:relative; height:12px; border:1px solid #000; border-radius:3px; box-shadow: inset 0 0 0 1px #3b3b3b; background:#200}
+.hp-fill{position:absolute; left:0; top:0; bottom:0; background:#b31414}
+.hp-text{position:absolute; right:6px; top:50%; transform:translateY(-50%); font-weight:bold; color:#fff; text-shadow:1px 1px 0 #000; font-size:.8rem}
+.pain-bar{position:relative; background:#221b00; border:1px solid #000; box-shadow: inset 0 0 0 1px #5a5000}
+.pain-fill{position:absolute; left:0; top:0; bottom:0; background:#e5b700}
+.pain-text{position:absolute; right:6px; top:50%; transform:translateY(-50%); font-weight:bold; color:#2b2300; text-shadow:1px 1px 0 #fff3; font-size:.8rem}
+
+/* Number fields block below antecedentes */
+.panel-painlife .numbers .num-row{display:grid; grid-template-columns: auto 80px auto 80px; gap:8px; align-items:center}
+.panel-painlife .numbers input[type=number]{text-align:center; font-weight:bold}
+
+/* Footer logo */
+.sac-footer{display:flex; justify-content:center; align-items:center; padding:10px 0}
+.sac-footer .footer-logo{height:40px; filter:none}
+
+/* Icon circles + Add button */
+.skulls-row{display:flex; align-items:center; gap:8px}
+.skulls-add{width:26px; height:26px; border:2px solid #111; background:#fff; font-weight:bold; line-height:20px; cursor:pointer}
+.skulls-add:hover{background:#f2e9d8}
+.panel-painlife .skull{width:26px;height:26px;opacity:.25;border:none;background:transparent;padding:0}
+.panel-painlife .skull.filled{opacity:1}
+.panel-painlife .skull img{width:100%;height:100%}
+
+/* +/- controls next to skull rows */
+.skulls-controls{display:flex; gap:6px}
+.skulls-sub,.skulls-add{width:26px;height:26px;border:2px solid #111;background:#fff;font-weight:bold;line-height:20px;cursor:pointer}
+.skulls-sub:hover{background:#f7e3e3}
+.skulls-add:hover{background:#f2e9d8}
+
+/* Roll buttons */
+.btn-roll-antecedente,.btn-roll-atributo{border:1px solid #111;background:#fff7e0;padding:2px 6px;cursor:pointer;font-weight:bold}
+.btn-roll-antecedente:hover,.btn-roll-atributo:hover{background:#ffeab8}
+.panel-attr .attr .btn-roll-atributo{margin-left:6px}
+.panel-skills .skill .btn-roll-antecedente{margin-left:4px}
+
+.panel-attr .attr label.attr-roll{cursor:pointer; text-shadow:1px 1px 0 #00000033}
+
+
+/* Click flash feedback */
+.click-flash{animation:flashClick .25s ease-in-out}
+@keyframes flashClick{
+  0%{transform:scale(1); filter:brightness(1)}
+  50%{transform:scale(.98); filter:brightness(1.2)}
+  100%{transform:scale(1); filter:brightness(1)}
+}
+
+.panel-skills .skill label.skill-roll, .panel-attr .attr label.attr-roll{user-select:none}
+
+
+/* === THEME & LOGO PATCH === */
+
+/* === Sacramento RPG: Avatar/logo tweaks === */
+.sac-portrait {
+  width: 84px;
+  height: 84px;
+  margin-right: 12px;
+  flex: 0 0 auto;
+}
+.sac-portrait.large { width: 96px; height: 96px; }
+.sac-portrait, .sac-portrait img, .sac-portrait svg {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.sac-portrait svg, .sac-portrait svg * { stroke: none !important; }
+.sac-portrait img, .sac-portrait svg {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+}
+
+/* === Sacramento RPG: Theme tokens (light + dark) === */
+:root {
+  --sac-bg:            #efe9df;
+  --sac-panel:         #0f0f10;
+  --sac-panel-text:    #f2f2f3;
+  --sac-subtext:       #c7c7cb;
+  --sac-accent:        #b86e2b;
+  --sac-accent-2:      #b63d3d;
+  --sac-input-bg:      #1c1d21;
+  --sac-input-border:  #353741;
+  --sac-input-text:    #f0f0f0;
+  --sac-tab-bg:        #e5dccf;
+  --sac-tab-text:      #1c1b19;
+  --sac-tab-active:    var(--sac-accent);
+  --sac-border-soft:   rgba(0,0,0,0.2);
+}
+body.sac-dark {
+  --sac-bg:           #0e1013;
+  --sac-panel:        #16181d;
+  --sac-panel-text:   #e6e7eb;
+  --sac-subtext:      #a3a7b3;
+  --sac-accent:       #e6a654;
+  --sac-accent-2:     #e26a6a;
+  --sac-input-bg:     #1e2127;
+  --sac-input-border: #383c46;
+  --sac-input-text:   #eaecef;
+  --sac-tab-bg:       #1a1d22;
+  --sac-tab-text:     #e6e7eb;
+}
+body.game.system-sacramento-rpg { background: var(--sac-bg); }
+.sac-sheet.sac-layout, .sac-panel, .panel, .panel-attr, .panel-skills, .panel-mini, .panel-painlife {
+  background: var(--sac-panel);
+  color: var(--sac-panel-text);
+  border-color: var(--sac-border-soft);
+}
+.sac-sheet h1, .sac-sheet h2, .sac-sheet h3 { color: var(--sac-panel-text); letter-spacing: .02em; }
+.panel-title { border-bottom: 2px solid var(--sac-border-soft); }
+.panel-sub, .sac-sub, .sac-note { color: var(--sac-subtext); }
+
+.sac-sheet input[type="number"], .sac-sheet input[type="text"], .sac-sheet textarea {
+  background: var(--sac-input-bg); color: var(--sac-input-text); border: 1px solid var(--sac-input-border);
+}
+.sac-sheet input:focus, .sac-sheet textarea:focus {
+  outline: none; border-color: var(--sac-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--sac-accent) 35%, transparent);
+}
+
+.sheet-tabs .item { background: var(--sac-tab-bg); color: var(--sac-tab-text); border: 1px solid var(--sac-border-soft); }
+.sheet-tabs .item.active { border-color: var(--sac-tab-active); color: var(--sac-accent); }
+
+.attr-roll, .skill-roll { color: var(--sac-panel-text); cursor: pointer; }
+.attr-roll:hover, .skill-roll:hover { color: var(--sac-accent); }
+.btn-roll-antecedente { background: var(--sac-input-bg); color: var(--sac-panel-text); border: 1px solid var(--sac-input-border); }
+.btn-roll-antecedente:hover { border-color: var(--sac-accent); color: var(--sac-accent); }
+
+.hp-bar .hp-fill { background: var(--sac-accent-2); }
+.pain-bar .pain-fill { background: var(--sac-accent); }
+.skull.filled { filter: drop-shadow(0 0 0 color-mix(in srgb, var(--sac-accent) 20%, transparent)); }
+
+/* === Inventory counters === */
+
+/* Inventory counters */
+.panel-items .panel-title { display:flex; align-items:center; justify-content:space-between; }
+.items-list .i-empty { opacity: .7; font-style: italic; padding: 6px 8px; }
+.items-list.mochila.over { outline: 2px dashed #b63d3d; border-radius: 6px; padding: 4px; }
+.items-list .item-row { display:grid; grid-template-columns: 1fr auto; gap: 6px; align-items:center; padding: 6px 8px; border-bottom: 1px solid rgba(0,0,0,.1); }
+.items-list .i-actions button { margin-left: 6px; }
+
+/* === Combined inventory === */
+
+/* Combined inventory header */
+.panel-items .warning { background: #fff3cd; border: 1px solid #f0d58f; padding: 6px 8px; border-radius: 6px; margin: 6px 0; }
+.items-list .i-group { opacity: .8; margin: 8px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.item-row.ammo-group .i-name::before { content: ""; }
+
+/* === ITEM SHEET STYLE === */
+
+/* === Item Sheet DnD-like === */
+.sac-item.sac-card { background: #f2eee7; padding: 10px; }
+.sac-item-header { display:grid; grid-template-columns: 64px 1fr auto; gap:10px; align-items:center; }
+.sac-item-header img.profile { width:64px; height:64px; border:1px solid rgba(0,0,0,.15); border-radius:4px; object-fit:cover; }
+.sac-item-header h1 input { width:100%; font-size:22px; border:0; background:transparent; border-bottom:1px solid rgba(0,0,0,.15); }
+.sac-item-header .meta { display:flex; gap:8px; align-items:center; }
+.sac-item .sheet-tabs { margin-top:8px; border-bottom:1px solid rgba(0,0,0,.1); }
+.sac-item .sheet-tabs .item { padding:6px 10px; cursor:pointer; }
+.sac-item .sheet-tabs .item.active { border-bottom:2px solid #ba9b68; color:#5a503b; }
+.sac-item .sheet-body { padding:8px 2px; }
+.sac-item .form-group { display:flex; flex-direction:column; gap:4px; margin-bottom:8px; }
+.sac-item .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.sac-item .hr { margin:10px 0 6px; padding-bottom:4px; border-bottom:1px solid rgba(0,0,0,.1); color:#4b4536; text-transform:uppercase; font-size:12px; letter-spacing:.06em; }
+.sac-item .muted { opacity:.75; font-style:italic; }
